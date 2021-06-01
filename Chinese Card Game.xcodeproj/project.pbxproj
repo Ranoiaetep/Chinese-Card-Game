@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9EFD5F762666C82C00B88438 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9EFD5F752666C82C00B88438 /* main.cpp */; };
 		9EFD5F7E2666C8AA00B88438 /* Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9EFD5F7C2666C8AA00B88438 /* Card.cpp */; };
+		9EFD5F812666DC2400B88438 /* Deck.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9EFD5F7F2666DC2400B88438 /* Deck.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		9EFD5F752666C82C00B88438 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		9EFD5F7C2666C8AA00B88438 /* Card.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Card.cpp; sourceTree = "<group>"; };
 		9EFD5F7D2666C8AA00B88438 /* Card.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Card.hpp; sourceTree = "<group>"; };
+		9EFD5F7F2666DC2400B88438 /* Deck.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Deck.cpp; sourceTree = "<group>"; };
+		9EFD5F802666DC2400B88438 /* Deck.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Deck.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +63,8 @@
 		9EFD5F742666C82C00B88438 /* Chinese Card Game */ = {
 			isa = PBXGroup;
 			children = (
+				9EFD5F7F2666DC2400B88438 /* Deck.cpp */,
+				9EFD5F802666DC2400B88438 /* Deck.hpp */,
 				9EFD5F752666C82C00B88438 /* main.cpp */,
 				9EFD5F7C2666C8AA00B88438 /* Card.cpp */,
 				9EFD5F7D2666C8AA00B88438 /* Card.hpp */,
@@ -123,6 +128,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EFD5F812666DC2400B88438 /* Deck.cpp in Sources */,
 				9EFD5F762666C82C00B88438 /* main.cpp in Sources */,
 				9EFD5F7E2666C8AA00B88438 /* Card.cpp in Sources */,
 			);
@@ -245,6 +251,7 @@
 		9EFD5F7A2666C82C00B88438 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -253,6 +260,7 @@
 		9EFD5F7B2666C82C00B88438 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
