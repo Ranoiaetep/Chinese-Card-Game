@@ -22,7 +22,7 @@ enum class Suite
     Joker,
 };
 
-static const std::map<Suite, std::string> SuiteSymbol =
+static const std::map<Suite, const std::string> SuiteSymbol =
 {
     {Suite::Diamond, "♦️"},
     {Suite::Club, "♣️"},
@@ -47,19 +47,19 @@ struct Card
     }
 };
 
-static const std::map<std::uint8_t, char> NumberSymbol
+static const std::map<std::uint8_t, const std::string> NumberSymbol
 {
-    {0, '3'},
-    {1, '4'},
-    {2, '5'},
-    {3, '6'},
-    {4, '7'},
-    {5, '8'},
-    {6, '9'},
-    {7, '0'},
-    {8, 'J'},
-    {9, 'Q'},
-    {10, 'K'},
-    {11, 'A'},
-    {12, '2'},
+    {0, "3"},
+    {1, "4"},
+    {2, "5"},
+    {3, "6"},
+    {4, "7"},
+    {5, "8"},
+    {6, "9"},
+    {7, "10"},
+    {8, "J"},
+    {9, "Q"},
+    {10, "K"},
+    {11, "A"},
+    {12, "2"},
 };
