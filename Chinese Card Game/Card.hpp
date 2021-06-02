@@ -36,6 +36,12 @@ struct Card
     Card(int, int);
     Suite suite;
     std::uint8_t number;
+	bool operator< (const Card& card) const { return number < card.number;}
+	bool operator== (const Card& card) const { return number == card.number;}
+	
+	std::string ToNumberSymbol() const;
+	std::string ToSuiteSymbol() const { return SuiteSymbol.at(suite);}
+
     friend std::pair<std::ostream&, Card> operator<< (std::ostream& os, const Card& card);
     friend std::pair<std::ostream&, Card> operator<< (std::pair<std::ostream&, Card> last, const Card& card);
     

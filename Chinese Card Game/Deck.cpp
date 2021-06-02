@@ -14,7 +14,7 @@ Deck::Deck(bool shuffles)
 {
     std::generate_n(std::back_inserter(deck), 54, [index = 54]() mutable {
         --index;
-        return Card(index / 13, index % 13);
+        return Card(index / 13, index % 13 + index / 52 * 13);
     });
     if (shuffles) {
         shuffle();

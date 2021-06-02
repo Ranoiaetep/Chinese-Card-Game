@@ -10,6 +10,7 @@
 		9EFD5F762666C82C00B88438 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9EFD5F752666C82C00B88438 /* main.cpp */; };
 		9EFD5F7E2666C8AA00B88438 /* Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9EFD5F7C2666C8AA00B88438 /* Card.cpp */; };
 		9EFD5F812666DC2400B88438 /* Deck.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9EFD5F7F2666DC2400B88438 /* Deck.cpp */; };
+		DE7189012667436500D171E8 /* Hand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE7188FF2667436500D171E8 /* Hand.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		9EFD5F7D2666C8AA00B88438 /* Card.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Card.hpp; sourceTree = "<group>"; };
 		9EFD5F7F2666DC2400B88438 /* Deck.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Deck.cpp; sourceTree = "<group>"; };
 		9EFD5F802666DC2400B88438 /* Deck.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Deck.hpp; sourceTree = "<group>"; };
+		DE7188FF2667436500D171E8 /* Hand.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Hand.cpp; sourceTree = "<group>"; };
+		DE7189002667436500D171E8 /* Hand.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Hand.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,8 @@
 				9EFD5F752666C82C00B88438 /* main.cpp */,
 				9EFD5F7C2666C8AA00B88438 /* Card.cpp */,
 				9EFD5F7D2666C8AA00B88438 /* Card.hpp */,
+				DE7188FF2667436500D171E8 /* Hand.cpp */,
+				DE7189002667436500D171E8 /* Hand.hpp */,
 			);
 			path = "Chinese Card Game";
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE7189012667436500D171E8 /* Hand.cpp in Sources */,
 				9EFD5F812666DC2400B88438 /* Deck.cpp in Sources */,
 				9EFD5F762666C82C00B88438 /* main.cpp in Sources */,
 				9EFD5F7E2666C8AA00B88438 /* Card.cpp in Sources */,
@@ -253,6 +259,7 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ML4MC3F798;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -262,6 +269,7 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ML4MC3F798;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

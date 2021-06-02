@@ -13,17 +13,22 @@ Card::Card(int suite, int number)
 , number(number)
 {}
 
+std::string Card::ToNumberSymbol() const
+{
+	if (suite != Suite::Joker) {
+		return NumberSymbol.at(number);
+	}
+	else
+	{
+		auto print = {"Black", "Red"};
+		return *std::next(print.begin(), number - 13);
+	}
+}
+
 std::pair<std::ostream&, Card> operator<< (std::ostream& os, const Card& card)
 {
-    os << SuiteSymbol.at(card.suite);
-    if (card.suite != Suite::Joker) {
-        os << NumberSymbol.at(card.number);
-    }
-    else
-    {
-        auto print = {"Black", "Red"};
-        os << *std::next(print.begin(), card.number);
-    }
+    os << card.ToSuiteSymbol();
+	os << card.ToNumberSymbol();
     return {os << ' ', card};
 }
 
@@ -31,15 +36,8 @@ std::pair<std::ostream&, Card> operator<< (std::pair<std::ostream&, Card> last, 
 {
     auto [os, last_card] = last;
     if (last_card.suite != card.suite) {
-        os << SuiteSymbol.at(card.suite);
+		os << card.ToSuiteSymbol();
     }
-    if (card.suite != Suite::Joker) {
-        os << NumberSymbol.at(card.number);
-    }
-    else
-    {
-        auto print = {"Black", "Red"};
-        os << *std::next(print.begin(), card.number);
-    }
+	os << card.ToNumberSymbol();
     return {os << ' ', card};
 }
