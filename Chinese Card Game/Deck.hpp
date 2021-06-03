@@ -14,9 +14,11 @@
 struct Deck
 {
     Deck(bool shuffles = true);
-    std::vector<Card> deck;
-    void shuffle();
-    Card&& draw();
-    bool has_card(){return deck.size();}
-    friend std::ostream& operator<< (std::ostream& os, Deck deck);
+    std::vector<Card> cards;
+    
+    auto shuffle() -> void;
+    auto draw() -> Card&&;
+    auto has_card(){return cards.size();}
+    
+    friend auto operator<< (std::ostream& os, Deck& deck) -> std::ostream&;
 };

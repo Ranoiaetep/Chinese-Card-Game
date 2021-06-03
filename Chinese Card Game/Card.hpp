@@ -7,11 +7,12 @@
 
 #pragma once
 
-#include <map>
+#include <array>
 #include <string>
 #include <cstdint>
 #include <iostream>
 #include <utility>
+#include <string_view>
 
 enum class Suite
 {
@@ -22,50 +23,32 @@ enum class Suite
     Joker,
 };
 
-static const std::map<Suite, const std::string> SuiteSymbol =
-{
-    {Suite::Diamond, "♦️"},
-    {Suite::Club, "♣️"},
-    {Suite::Heart, "♥️"},
-    {Suite::Spade, "♠️"},
-    {Suite::Joker, "🃏"},
-};
+static constexpr std::array<std::string_view, 5> SuiteSymbol
+{"♦️", "♣️", "♥️", "♠️", "🃏"};
+
+static constexpr std::array<std::string_view, 15> NumberSymbol
+{"3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A", "2", "Black", "Red"};
 
 struct Card
 {
     Card(int, int);
     Suite suite;
     std::uint8_t number;
-	bool operator< (const Card& card) const { return number < card.number;}
-	bool operator== (const Card& card) const { return number == card.number;}
+    
+	auto operator< (const Card& card) const { return number < card.number;}
+	auto operator== (const Card& card) const { return number == card.number;}
+    auto operator- (const Card& card) const { return number - card.number;}
 	
-	std::string ToNumberSymbol() const;
-	std::string ToSuiteSymbol() const { return SuiteSymbol.at(suite);}
+    auto ToNumberSymbol() const { return NumberSymbol[number];}
+    auto ToSuiteSymbol() const { return SuiteSymbol[static_cast<int>(suite)];}
 
-    friend std::pair<std::ostream&, Card> operator<< (std::ostream& os, const Card& card);
-    friend std::pair<std::ostream&, Card> operator<< (std::pair<std::ostream&, Card> last, const Card& card);
+    friend auto operator<< (std::ostream& os, const Card& card) -> std::pair<std::ostream&, const Card*>;
+    friend auto operator<< (std::pair<std::ostream&, const Card*> last, const Card& card) -> std::pair<std::ostream&, const Card*>;
     
     template<typename T>
-    friend std::ostream& operator<< (std::pair<std::ostream&, Card> last, const T& t)
+    friend std::ostream& operator<< (std::pair<std::ostream&, const Card*> last, const T& t)
     {
         last.first << t;
         return last.first;
     }
-};
-
-static const std::map<std::uint8_t, const std::string> NumberSymbol
-{
-    {0, "3"},
-    {1, "4"},
-    {2, "5"},
-    {3, "6"},
-    {4, "7"},
-    {5, "8"},
-    {6, "9"},
-    {7, "10"},
-    {8, "J"},
-    {9, "Q"},
-    {10, "K"},
-    {11, "A"},
-    {12, "2"},
 };

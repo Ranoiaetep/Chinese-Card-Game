@@ -12,7 +12,8 @@
 
 Deck::Deck(bool shuffles)
 {
-    std::generate_n(std::back_inserter(deck), 54, [index = 54]() mutable {
+    cards.reserve(54);
+    std::generate_n(std::back_inserter(cards), 54, [index = 54]() mutable {
         --index;
         return Card(index / 13, index % 13 + index / 52 * 13);
     });
@@ -21,26 +22,26 @@ Deck::Deck(bool shuffles)
     }
 }
 
-void Deck::shuffle()
+auto Deck::shuffle() -> void
 {
     static std::random_device rd;
     static std::mt19937 g(rd());
-    std::shuffle(deck.begin(), deck.end(), g);
+    std::shuffle(cards.begin(), cards.end(), g);
 }
 
-Card&& Deck::draw()
+auto Deck::draw() -> Card&&
 {
-    auto&& temp = std::move(deck.back());
-    deck.pop_back();
+    auto&& temp = std::move(cards.back());
+    cards.pop_back();
     return std::move(temp);
 }
 
-std::ostream& operator<< (std::ostream& os, Deck deck)
+auto operator<< (std::ostream& os, Deck& deck) -> std::ostream&
 {
-    if (deck.deck.size())
+    if (deck.cards.size())
     {
-        auto o = os << *deck.deck.rbegin();
-        for(auto it = std::next(deck.deck.rbegin()); it != deck.deck.rend(); std::advance(it, 1))
+        auto o = os << *deck.cards.rbegin();
+        for(auto it = std::next(deck.cards.rbegin()); it != deck.cards.rend(); std::advance(it, 1))
             o.second = (o << *it).second;
     }
     else

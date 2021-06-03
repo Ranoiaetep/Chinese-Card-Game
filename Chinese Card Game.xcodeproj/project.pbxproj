@@ -26,6 +26,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9E63A81A2668484400362E82 /* Helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
 		9EFD5F722666C82C00B88438 /* Chinese Card Game */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Chinese Card Game"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EFD5F752666C82C00B88438 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		9EFD5F7C2666C8AA00B88438 /* Card.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Card.cpp; sourceTree = "<group>"; };
@@ -69,6 +70,7 @@
 				9EFD5F7F2666DC2400B88438 /* Deck.cpp */,
 				9EFD5F802666DC2400B88438 /* Deck.hpp */,
 				9EFD5F752666C82C00B88438 /* main.cpp */,
+				9E63A81A2668484400362E82 /* Helper.h */,
 				9EFD5F7C2666C8AA00B88438 /* Card.cpp */,
 				9EFD5F7D2666C8AA00B88438 /* Card.hpp */,
 				DE7188FF2667436500D171E8 /* Hand.cpp */,
